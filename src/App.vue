@@ -1,9 +1,17 @@
 <template>
   <div id="app">
-		<g-button icon="down" icon-position="right">按钮</g-button>
-		<g-button icon="left" icon-position="left">按钮</g-button>
+		<g-button icon="down" icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+		<g-button icon="left" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
 		<g-button icon="setting" >按钮</g-button>
 		<g-button>按钮</g-button>
+		
+		<g-button-group>
+			<g-button icon="left" icon-position="left">上一页</g-button>
+			<g-button>按钮</g-button>
+			<g-button icon="right" icon-position="right">下一页</g-button>
+		</g-button-group>
+		
+		 <div id="test"></div>
   </div>
 </template>
 
@@ -11,6 +19,12 @@
 
 export default {
   name: 'App',
+	data(){
+		return{
+			loading1:true,
+			loading2:false
+		}
+	}
 }
 </script>
 
@@ -20,6 +34,10 @@ export default {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		margin: 20px;
+		
+		> .g-button{
+			margin-right: 10px;
+		}
 	}
 	*{
 		margin: 0;
