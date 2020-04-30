@@ -14,6 +14,9 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "chai-spies": "^1.0.0",
     "karma": "^5.0.2",
@@ -30,7 +33,8 @@
     "sass-loader": "^8.0.2",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
   },
   "browserslist": [
     "> 1%",
