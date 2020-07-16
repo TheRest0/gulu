@@ -11,7 +11,12 @@
 			<g-button icon="right" icon-position="right">下一页</g-button>
 		</g-button-group>
 		
-		 <div id="test"></div>
+		<div id="test"></div>
+		<div style="height: 100px;"></div>
+		<g-input :value="value"></g-input>
+		<g-input error="年龄必须是数字"></g-input>
+		<g-input :disabled="true"></g-input>
+		<g-input :readonly="true"></g-input>
   </div>
 </template>
 
@@ -22,8 +27,12 @@ export default {
 	data(){
 		return{
 			loading1:true,
-			loading2:false
+			loading2:false,
+			value:'111'
 		}
+	},
+	created() {
+		console.log(this)
 	}
 }
 </script>
