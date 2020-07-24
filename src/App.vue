@@ -1,22 +1,40 @@
 <template>
   <div id="app">
-		<g-button icon="down" icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-		<g-button icon="left" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-		<g-button icon="setting" >按钮</g-button>
-		<g-button>按钮</g-button>
+		<g-row gutter='20'>
+			<g-col span='6'>1</g-col>
+			<g-col span='6' offset='4'>2</g-col>
+			<g-col span='6' offset='2'>3</g-col>
+		</g-row>
+		<g-row>
+			<g-col span='2'>1</g-col>
+			<g-col span='22'>2</g-col>
+		</g-row>
+		<g-row>
+			<g-col span='4'>1</g-col>
+			<g-col span='18' offset='2'>2</g-col>
+		</g-row>
 		
-		<g-button-group>
-			<g-button icon="left" icon-position="left">上一页</g-button>
+		
+		<div class="box">
+			<g-button icon="down" icon-position="right" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+			<g-button icon="left" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+			<g-button icon="setting" >按钮</g-button>
 			<g-button>按钮</g-button>
-			<g-button icon="right" icon-position="right">下一页</g-button>
-		</g-button-group>
+			
+			<g-button-group>
+				<g-button icon="left" icon-position="left">上一页</g-button>
+				<g-button>按钮</g-button>
+				<g-button icon="right" icon-position="right">下一页</g-button>
+			</g-button-group>
+		</div>
 		
-		<div id="test"></div>
-		<div style="height: 100px;"></div>
-		<g-input :value="value"></g-input>
-		<g-input error="年龄必须是数字"></g-input>
-		<g-input :disabled="true"></g-input>
-		<g-input :readonly="true"></g-input>
+		
+		<div class="box">
+			<g-input v-model="value"></g-input>
+			<p>{{value}}</p>
+			<button @click="value +=1">+1</button>
+		</div>
+		<!-- <div id="test"></div> -->
   </div>
 </template>
 
@@ -69,4 +87,10 @@ export default {
 		fill: currentColor;
 		overflow: hidden;
 	}
+</style>
+<style scoped="scoped" lang="scss">
+	.box{
+		margin-top: 50px;
+	}
+	
 </style>
